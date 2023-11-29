@@ -6,7 +6,7 @@ class CredentialsReader:
     This class is used to represent a credentials reader.
     '''
     @staticmethod
-    def read_db_creds(self, credentials_filename: str) -> dict:
+    def read_db_creds(credentials_filename: str) -> dict:
         '''
         This static method reads the yaml file.
 
