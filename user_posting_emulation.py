@@ -39,7 +39,9 @@ def run_infinite_post_data_loop():
         random_row = random.randint(0, 11000)
         engine = new_connector.create_db_connector()
         db_creds = CredentialsReader.read_db_creds('credentials')
-        INVOKE_URL = db_creds['INVOKE_URL']
+        PIN_INVOKE_URL = db_creds['PIN_INVOKE_URL']
+        GEO_INVOKE_URL = db_creds['GEO_INVOKE_URL']
+        USER_INVOKE_URL = db_creds['USER_INVOKE_URL']
 
         with engine.connect() as connection:
 
@@ -72,7 +74,7 @@ def run_infinite_post_data_loop():
                 }, default='json_serial')
                 headers = {'Content-Type': 'application/vnd.kafka.json.v2+json'}
                 response = requests.request(
-                    "POST", INVOKE_URL, headers=headers, data=payload)
+                    "POST", PIN_INVOKE_URL, headers=headers, data=payload)
                 print(response.status_code)
 
             geo_string = text(
@@ -96,7 +98,7 @@ def run_infinite_post_data_loop():
                 }, default=json_util.default)
                 headers = {'Content-Type': 'application/vnd.kafka.json.v2+json'}
                 response = requests.request(
-                    "POST", INVOKE_URL, headers=headers, data=payload)
+                    "POST", GEO_INVOKE_URL, headers=headers, data=payload)
                 print(response.status_code)
 
             user_string = text(f"SELECT * FROM user_data LIMIT {random_row}, 1")
@@ -119,7 +121,7 @@ def run_infinite_post_data_loop():
                 }, default=json_util.default)
                 headers = {'Content-Type': 'application/vnd.kafka.json.v2+json'}
                 response = requests.request(
-                    "POST", INVOKE_URL, headers=headers, data=payload)
+                    "POST", USER_INVOKE_URL, headers=headers, data=payload)
                 print(response.status_code)
             
             print(pin_result)
