@@ -1,22 +1,24 @@
 import requests
-from time import sleep
 import random
-from multiprocessing import Process
-import boto3
 import json
 import sqlalchemy
-from sqlalchemy import text
 
 from bson import json_util
-from database_utils import CredentialsReader
+from sqlalchemy import text
+from sqlalchemy.engine.base import Engine
+from time import sleep
+
+from database_utils import FileReader
 
 
 random.seed(100)
 
 
 class AWSDBConnector:
-
-    db_creds = CredentialsReader.read_db_creds('credentials')
+    '''
+    This class is used to represent an AWS database connector.
+    '''
+    db_creds = FileReader.read('credentials')
 
     def __init__(self):
         self.HOST = self.db_creds['HOST']
@@ -25,8 +27,18 @@ class AWSDBConnector:
         self.DATABASE = self.db_creds['DATABASE']
         self.PORT = self.db_creds['PORT']
         
-    def create_db_connector(self):
-        engine = sqlalchemy.create_engine(f"mysql+pymysql://{self.USER}:{self.PASSWORD}@{self.HOST}:{self.PORT}/{self.DATABASE}?charset=utf8mb4")
+    def create_db_connector(self) -> Engine:
+        '''
+        This method initialises the SQLAlchemy engine with the database
+        credentials.
+
+        Returns:
+            engine (Engine): the database engine.
+        '''
+        engine = sqlalchemy.create_engine(
+                                f"mysql+pymysql://{self.USER}:
+                                {self.PASSWORD}@{self.HOST}:
+                                {self.PORT}/{self.DATABASE}?charset=utf8mb4")
         return engine
 
 
@@ -34,14 +46,17 @@ new_connector = AWSDBConnector()
 
 
 def run_infinite_post_data_loop():
+    '''
+    This method infinitely posts data from database to AWS Kafka topics.
+    '''
     while True:
         sleep(random.randrange(0, 2))
         random_row = random.randint(0, 11000)
         engine = new_connector.create_db_connector()
-        db_creds = CredentialsReader.read_db_creds('credentials')
-        PIN_INVOKE_URL = db_creds['PIN_INVOKE_URL']
-        GEO_INVOKE_URL = db_creds['GEO_INVOKE_URL']
-        USER_INVOKE_URL = db_creds['USER_INVOKE_URL']
+        config = FileReader.read('config')
+        PIN_INVOKE_URL = config['PIN_INVOKE_URL']
+        GEO_INVOKE_URL = config['GEO_INVOKE_URL']
+        USER_INVOKE_URL = config['USER_INVOKE_URL']
 
         with engine.connect() as connection:
 
