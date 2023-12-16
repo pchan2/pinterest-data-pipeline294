@@ -1,22 +1,21 @@
 import yaml
 
 
-class CredentialsReader:
+class FileReader:
     '''
-    This class is used to represent a credentials reader.
+    This class is used to represent a yaml file reader.
     '''
     @staticmethod
-    def read_db_creds(credentials_filename: str) -> dict:
+    def read(filename: str) -> dict:
         '''
         This static method reads the yaml file.
 
         Args:
-            credentials_filename (str): the filename of the database
-            credentials.
+            filename (str): the yaml filename.
 
         Returns:
             db_creds (dict): the database credentials.
         '''
-        with open(f'{credentials_filename}.yaml', 'r') as file:
+        with open(f'{filename}.yaml', 'r') as file:
             db_creds = yaml.safe_load(file)
             return db_creds
