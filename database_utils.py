@@ -133,13 +133,14 @@ class Emulator:
                     partition_key: str = '') -> None:
         '''
         This static method is used to ingest data, importing data from a
-        data source to a cloud-based storage medium e.g. Kafka or Kinesis, for 
-        batch or stream processing.
+        data source to a cloud-based storage medium e.g. Kafka or 
+        Kinesis, for batch or stream processing.
 
         Args:
             table_name (str): the table name of the data source.
             random_row (int): the limit of the ``SELECT`` query.
-            connection (Engine._connection_cls): the engine connection object.
+            connection (Engine._connection_cls): the engine connection
+            object.
             content_type (str): the content type of HTTP headers.
             invoke_url (str): the invoke URL.
             is_stream (bool): whether the data is a stream or a batch.
