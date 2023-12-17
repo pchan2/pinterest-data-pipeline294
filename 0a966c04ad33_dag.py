@@ -47,7 +47,7 @@ with DAG(f'{creds["IAM_USER_NAME"]}_dag',
         task_id='submit_run',
         # The connection we set-up previously.
         databricks_conn_id='databricks_default',
-        existing_cluster_id=creds['DATABRICKS_CLUSTER_ID'],
+        existing_cluster_id=f'{creds["DATABRICKS_CLUSTER_ID"]}',
         notebook_task=notebook_task
     )
     opr_submit_run
