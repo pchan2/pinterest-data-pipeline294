@@ -38,7 +38,7 @@ AWS data engineering services include:
 - TypeError: Object of type datetime is not JSON serializable, [stackoverflow](https://stackoverflow.com/questions/11875770/how-can-i-overcome-datetime-datetime-not-json-serializable)
 - For Cron scheduling, [https://crontab.guru/](https://crontab.guru/)
 - Python Match Case, [enterprisedna](https://blog.enterprisedna.co/python-match-case/)
-- The engine connection object is a facade that uses a DBAPI connection internally in order to 
+- The engine connection object is a facade that uses a DBAPI connection internally in order to  
   communicate with the database.
 - PySpark - fillna, [projectpro](https://www.projectpro.io/recipes/explain-fillna-and-fill-functions-pyspark-databricks)
 - PySpark - loop through rows, [sparkbyexamples](https://sparkbyexamples.com/pyspark/pyspark-loop-iterate-through-rows-in-dataframe/)
