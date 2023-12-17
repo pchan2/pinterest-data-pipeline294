@@ -35,10 +35,7 @@ class AWSDBConnector:
         Returns:
             engine (Engine): the database engine.
         '''
-        engine = sqlalchemy.create_engine(
-                                f"mysql+pymysql://{self.USER}:
-                                {self.PASSWORD}@{self.HOST}:
-                                {self.PORT}/{self.DATABASE}?charset=utf8mb4")
+        engine = sqlalchemy.create_engine(f'mysql+pymysql://{self.USER}:{self.PASSWORD}@{self.HOST}:{self.PORT}/{self.DATABASE}?charset=utf8mb4')
         return engine
 
 
@@ -147,7 +144,3 @@ def run_infinite_post_data_loop():
 if __name__ == "__main__":
     run_infinite_post_data_loop()
     print('Working')
-    
-    
-
-
