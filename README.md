@@ -32,25 +32,25 @@ AWS data engineering services include:
 
 ## Learnings
 
-- [git update-ref -d HEAD](https://stackoverflow.com/questions/6632191/how-to-revert-initial-git-commit)
+- `git update-ref -d HEAD` [stackoverflow](https://stackoverflow.com/questions/6632191/how-to-revert-initial-git-commit)
   to revert an initial git commit.
-- [git reset --hard <last_known_good_commit>](https://stackoverflow.com/questions/22682870/how-can-i-undo-pushed-commits-using-git) to undo pushed commits.
+- `git reset --hard <last_known_good_commit>` [stackoverflow](https://stackoverflow.com/questions/22682870/how-can-i-undo-pushed-commits-using-git) to undo pushed commits.
 - `git rm --cached <file>` to unstage
-- [TypeError: Object of type datetime is not JSON serializable](https://stackoverflow.com/questions/11875770/how-can-i-overcome-datetime-datetime-not-json-serializable)
-- [https://crontab.guru/ for scheduling](https://crontab.guru/)
-- [Python Match Case](https://blog.enterprisedna.co/python-match-case/)
+- TypeError: Object of type datetime is not JSON serializable [stackoverflow](https://stackoverflow.com/questions/11875770/how-can-i-overcome-datetime-datetime-not-json-serializable)
+- [https://crontab.guru/](https://crontab.guru/) for scheduling.
+- Python Match Case [enterprisedna](https://blog.enterprisedna.co/python-match-case/)
 - The engine connection object is a facade that uses a DBAPI connection internally in order to 
   communicate with the database.
-- [PySpark - fillna](https://www.projectpro.io/recipes/explain-fillna-and-fill-functions-pyspark-databricks).
-- [PySpark - loop through rows](https://sparkbyexamples.com/pyspark/pyspark-loop-iterate-through-rows-in-dataframe/)
-- [PySpark - drop columns](https://stackoverflow.com/questions/29600673/how-to-delete-columns-in-pyspark-dataframe)
-- [PySpark - orderBy and sort](https://sparkbyexamples.com/pyspark/pyspark-orderby-and-sort-explained/)
-- [PySpark - retrieve top n]( https://sparkbyexamples.com/pyspark/pyspark-retrieve-top-n-from-each-group-of-dataframe/)
-- [Medium: stream-data-from-kinesis-to-databricks-with-pyspark](https://medium.com/road-to-data-engineering/stream-data-from-kinesis-to-databricks-with-pyspark-813c516b4233)
-- [Learn how to process Steaming Data with DataBricks and Amazon Kinesis [ hands on Demo ]](https://www.youtube.com/watch?v=2s08mk6vfDk)
-- [Apache Spark’s Structured Streaming with Amazon Kinesis on Databricks](https://www.databricks.com/blog/2017/08/09/apache-sparks-structured-streaming-with-amazon-kinesis-on-databricks.html)
-- [PySpark partitionBy() – Write to Disk Example](https://sparkbyexamples.com/pyspark/pyspark-partitionby-example/)
-- [Advancing Spark - Databricks Delta Streaming](https://www.youtube.com/watch?v=-OQGEc09xbY)
+- PySpark - fillna [projectpro](https://www.projectpro.io/recipes/explain-fillna-and-fill-functions-pyspark-databricks)
+- PySpark - loop through rows [sparkbyexamples](https://sparkbyexamples.com/pyspark/pyspark-loop-iterate-through-rows-in-dataframe/)
+- PySpark - drop columns [stackoverflow](https://stackoverflow.com/questions/29600673/how-to-delete-columns-in-pyspark-dataframe)
+- PySpark - orderBy and sort [sparkbyexamples](https://sparkbyexamples.com/pyspark/pyspark-orderby-and-sort-explained/)
+- PySpark - retrieve top n [sparkbyexamples](https://sparkbyexamples.com/pyspark/pyspark-retrieve-top-n-from-each-group-of-dataframe/)
+- Stream data from Kinesis to Databricks with PySpark [medium](https://medium.com/road-to-data-engineering/stream-data-from-kinesis-to-databricks-with-pyspark-813c516b4233)
+- Learn how to process Steaming Data with DataBricks and Amazon Kinesis [ hands on Demo ] [youtube](https://www.youtube.com/watch?v=2s08mk6vfDk)
+- Apache Spark’s Structured Streaming with Amazon Kinesis on Databricks [databricks](https://www.databricks.com/blog/2017/08/09/apache-sparks-structured-streaming-with-amazon-kinesis-on-databricks.html)
+- PySpark partitionBy() – Write to Disk Example [sparkbyexamples](https://sparkbyexamples.com/pyspark/pyspark-partitionby-example/)
+- Advancing Spark - Databricks Delta Streaming [youtube](https://www.youtube.com/watch?v=-OQGEc09xbY)
 
 ## Milestones
 
