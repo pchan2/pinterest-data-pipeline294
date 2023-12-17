@@ -31,11 +31,12 @@ AWS data engineering services include:
 - Kinesis for stream processing.
 
 ## Learnings
-[git update-ref -d HEAD](https://stackoverflow.com/questions/6632191/how-to-revert-initial-git-commit)
-[git reset --hard <last_known_good_commit>](https://stackoverflow.com/questions/22682870/how-can-i-undo-pushed-commits-using-git)
-`git rm --cached <file>` to unstage
-[TypeError: Object of type datetime is not JSON serializable](https://stackoverflow.com/questions/11875770/how-can-i-overcome-datetime-datetime-not-json-serializable)
-[https://crontab.guru/ for scheduling](https://crontab.guru/)
+
+- [git update-ref -d HEAD](https://stackoverflow.com/questions/6632191/how-to-revert-initial-git-commit)
+- [git reset --hard <last_known_good_commit>](https://stackoverflow.com/questions/22682870/how-can-i-undo-pushed-commits-using-git)
+- `git rm --cached <file>` to unstage
+- [TypeError: Object of type datetime is not JSON serializable](https://stackoverflow.com/questions/11875770/how-can-i-overcome-datetime-datetime-not-json-serializable)
+- [https://crontab.guru/ for scheduling](https://crontab.guru/)
 
 ## Milestones
 
@@ -65,6 +66,7 @@ AWS data engineering services include:
     - Run `pip install PyYAML`
 - Create `credentials.yaml` and `config.yaml` in the parent directory to have credentials as per the 
 `AWSDBConnector` class and `DAG` file.
+- Create `<IAM-user-name>-key-pair.pem` with the RSA private key for EC2 instance connection by SSH.
 
 ## Usage
 - `cd` to the pinterest-data-pipeline294 directory.
@@ -75,7 +77,7 @@ AWS data engineering services include:
         - Select the relevant EC2.
         - Click connect and under the SSH Client tab, copy the SSH command to the terminal.
         - Replace `root` with `ec2-user`
-        - Example, run `ssh -i "0a966c04ad33-key-pair.pem" ec2-user@ec2-<IP-address>.compute-1.amazonaws.com`
+        - Example, run `ssh -i "<IAM-user-name>-key-pair.pem" ec2-user@ec2-<IP-address>.compute-1.amazonaws.com`
     - Start the REST proxy:
         - Run `confluent-7.2.0/bin/kafka-rest-start /home/ec2-user/confluent-7.2.0/etc/kafka-rest/kafka-rest.properties`
     - In a new terminal:
